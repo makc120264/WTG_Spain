@@ -1,10 +1,10 @@
 # WTG_Spain
-Стек
-Laravel Framework 11+
-PHP 8.3+
-Redis для Broadcasting
-MySQL 8+
-Laravel Reverb для сокетів
+Стек:
+- Laravel Framework 11+
+- PHP 8.3+
+- Redis для Broadcasting
+- MySQL 8+
+- Laravel Reverb для сокетів
 
 ТЗ Socket
 Необхідно реалізувати базову систему реєстрації та авторизації юзерів.
