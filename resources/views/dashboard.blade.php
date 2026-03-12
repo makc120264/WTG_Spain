@@ -63,50 +63,16 @@
     </div>
 
     <script>
-        const authUserId = {{ auth()->id() }};
-        const messagesContainer = document.getElementById('messages');
-        const messageForm = document.getElementById('message-form');
-        const formError = document.getElementById('form-error');
-
-        const renderMessage = (payload) => {
-            const empty = document.getElementById('empty-messages');
-
-            if (empty) {
-                empty.remove();
-            }
-
-            const item = document.createElement('div');
-            item.className = 'border rounded p-3 text-sm';
-            item.innerHTML = `
-                <div class="font-medium">От: ${payload.sender_name}</div>
-                <div>${payload.body}</div>
-                <div class="text-gray-500 text-xs mt-1">${payload.created_at}</div>
-            `;
-
-            messagesContainer.appendChild(item);
-        };
-
-        messageForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            formError.textContent = '';
-
-            const formData = new FormData(messageForm);
-
-            try {
-                const response = await window.axios.post('{{ route('messages.store') }}', {
-                    recipient_id: formData.get('recipient_id'),
-                    body: formData.get('body'),
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.initMessaging) {
+                window.initMessaging({
+                    authUserId: {{ auth()->id() }},
+                    messagesContainerId: 'messages',
+                    messageFormId: 'message-form',
+                    formErrorId: 'form-error',
+                    storeUrl: '{{ route('messages.store') }}',
                 });
-
-                messageForm.reset();
-            } catch (error) {
-                formError.textContent = error.response?.data?.message ?? 'Ошибка отправки сообщения';
             }
         });
-
-        window.Echo.private(`users.${authUserId}`)
-            .listen('.message.sent', (event) => {
-                renderMessage(event);
-            });
     </script>
 </x-app-layout>

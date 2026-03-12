@@ -1,0 +1,32 @@
+
+   INFO  Starting server on 0.0.0.0:8080 (wtg-spain.loc).  
+
+  Connection Established ................................. 945127724.752006113  
+  Message Received ....................................... 945127724.752006113  
+  
+   1▕ [1m{[0m 
+   2▕ [1m    "event": "pusher:subscribe",[0m 
+   3▕ [1m    "data": {[0m 
+   4▕ [1m        "auth": "3rmcf3rbdbdrhbha5yuz:b398cbb7c63284fe8bf8d63fcaca857f47457a74a7686709c716de92a7a4ea9d",[0m 
+   5▕ [1m        "channel": "private-users.8"[0m 
+   6▕ [1m    }[0m 
+   7▕ [1m}[0m 
+
+  Message Handled ........................................ 945127724.752006113  
+  Connection Established ................................. 459721784.122397417  
+  Message Received ....................................... 459721784.122397417  
+  
+   1▕ [1m{[0m 
+   2▕ [1m    "event": "pusher:subscribe",[0m 
+   3▕ [1m    "data": {[0m 
+   4▕ [1m        "auth": "3rmcf3rbdbdrhbha5yuz:d383f0a3a52a78f3e0724c409455f1eedc2f089e489a2eba32c1cb819a010b26",[0m 
+   5▕ [1m        "channel": "private-users.1"[0m 
+   6▕ [1m    }[0m 
+   7▕ [1m}[0m 
+
+  Message Handled ........................................ 459721784.122397417  
+
+   INFO  Gracefully terminating connections.  
+
+  Connection Closed ...................................... 945127724.752006113  
+  Connection Closed ...................................... 459721784.122397417  
