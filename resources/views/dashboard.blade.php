@@ -98,10 +98,6 @@
                     body: formData.get('body'),
                 });
 
-                if (Number(formData.get('recipient_id')) === authUserId) {
-                    renderMessage(response.data.message);
-                }
-
                 messageForm.reset();
             } catch (error) {
                 formError.textContent = error.response?.data?.message ?? 'Ошибка отправки сообщения';
